@@ -16,8 +16,9 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel.currentAsset.observe(this){ JsonRes ->
-            binding.textView.text = JsonRes.timestamp
+            binding.textView.text = JsonRes.data.name
         }
     }
 
 }
+
