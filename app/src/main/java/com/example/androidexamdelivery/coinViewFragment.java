@@ -20,18 +20,7 @@ public class coinViewFragment extends Fragment {
     SearchView searchView;
     ArrayAdapter<String> adapter;
     String[] data = {
-            "Bitcoin",
-            "Ethereum",
-            "Binance Coin",
-            "Cardano",
-            "Tether",
-            "Polkadot",
-            "XRP",
-            "Uniswap",
-            "THETA",
-            "Litecoin",
-            "Chainlink",
-            "Bitcion Cash"
+            // insert list objects here
     };
 
     public coinViewFragment() {
