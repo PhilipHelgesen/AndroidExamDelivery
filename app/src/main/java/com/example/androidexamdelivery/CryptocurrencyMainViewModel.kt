@@ -15,7 +15,7 @@ class CryptocurrencyMainViewModel : ViewModel() {
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            val asset = coincapService.getCurrencyAssets("ethereum")
+            val asset = coincapService.getCurrencyAssets("bitcoin")
             currentAsset.postValue(asset)
         }
     }
