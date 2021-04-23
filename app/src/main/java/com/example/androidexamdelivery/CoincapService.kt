@@ -9,7 +9,7 @@ interface CoincapService {
     suspend fun getCurrencyAssets(@Path("id") id: String) : JsonRes
 
     @GET("assets")
-    suspend fun getAllCurrencyAssets() : JsonRes
+    suspend fun getAllCurrencyAssets() : ListAllAssets
 
 
 }

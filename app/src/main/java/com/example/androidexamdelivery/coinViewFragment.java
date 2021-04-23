@@ -16,11 +16,10 @@ import android.widget.Toast;
 
 public class coinViewFragment extends Fragment {
     ListView lv;
-
     SearchView searchView;
     ArrayAdapter<String> adapter;
     String[] data = {
-            // insert list objects here
+
     };
 
     public coinViewFragment() {

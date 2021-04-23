@@ -8,8 +8,9 @@ import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBin
 import java.util.*
 
 class CryptocurrencyMainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityCryptocurrencyMainBinding
-   private var currencyId = ""
+    private var currencyId = ""
     val viewModel: CryptocurrencyMainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,7 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
 
             Glide.with(this).load(bitcoinUrl).into(binding.imageView)
         }
+
     }
 }
 
