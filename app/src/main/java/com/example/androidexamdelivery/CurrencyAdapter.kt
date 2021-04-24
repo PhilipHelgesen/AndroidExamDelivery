@@ -1,44 +1,36 @@
 package com.example.androidexamdelivery
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.lifecycle.liveData
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>() {
 
-    private val CurrencyList = mutableListOf<Asset>()
+    private val currencyList = mutableListOf<Asset>()
 
-    inner class CurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        var name : TextView = itemView.findViewById(R.id.CurrencyName)
-        var recentRate : TextView = itemView.findViewById(R.id.RecentRate)
-        var symbol : TextView = itemView.findViewById(R.id.imageView)
-
-    }
+    inner class CurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {
-        TODO("Not yet implemented")
-
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_currency, parent, false)
+        return CurrencyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
-        //Verdiene settes her
-        holder.name.text = CurrencyList[position].toString()
-        holder.recentRate.text = CurrencyList[position].toString()
-        holder.symbol.text = CurrencyList[position].toString()
+        holder.itemView.apply {
+            currencyName.text = currencyList[position].name
+            currencyRate.text = currencyList[position].priceUsd
+        }
+
     }
 
     override fun getItemCount(): Int {
-        return CurrencyList.size
+        return currencyList.size
     }
 
     fun setCurrencyList(list: List<Asset>){
-        CurrencyList.clear()
-        CurrencyList.addAll(list)
+        currencyList.clear()
+        currencyList.addAll(list)
         notifyDataSetChanged()
     }
 
