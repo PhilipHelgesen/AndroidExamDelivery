@@ -1,16 +1,20 @@
 package com.example.androidexamdelivery
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_currency.view.*
-
 
 
 class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>() {
 
     private val currencyList = mutableListOf<Asset>()
+    private var currencyId = ""
+
 
     inner class CurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -20,9 +24,24 @@ class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>
     }
 
     override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
+        
+
         holder.itemView.apply{
             cryptoName.text = currencyList[position].name
             cryptoRate.text = currencyList[position].priceUsd
+            cryptoSymbol.text = currencyList[position].symbol
+            cryptoRateChange.text = currencyList[position].changePercent24Hr
+
+            if (data!! >= "0.00"){
+                cryptoRateChange.setTextColor(
+                    Color.GREEN)
+            }else{
+                cryptoRateChange.setTextColor(
+                    Color.RED)
+            }
+
+            val imageUrl = "https://static.coincap.io/assets/icons/$currencyId@2x.png"
+            Glide.with(context).load(imageUrl).into(cryptoImage)
         }
 
     }
