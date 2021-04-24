@@ -5,12 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     tools:context=".CryptocurrencyMainActivity"
-    android:background="@color/gray"
     android:padding="12dp"
     >
 
     <TextView
-
         android:id="@+id/cryptoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

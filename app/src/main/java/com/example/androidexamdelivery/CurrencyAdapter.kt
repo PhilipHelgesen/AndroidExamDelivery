@@ -4,6 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_currency.view.*
+
+
 
 class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>() {
 
@@ -17,9 +20,9 @@ class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>
     }
 
     override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
-        holder.itemView.apply {
-            currencyName.text = currencyList[position].name
-            currencyRate.text = currencyList[position].priceUsd
+        holder.itemView.apply{
+            cryptoName.text = currencyList[position].name
+            cryptoRate.text = currencyList[position].priceUsd
         }
 
     }
