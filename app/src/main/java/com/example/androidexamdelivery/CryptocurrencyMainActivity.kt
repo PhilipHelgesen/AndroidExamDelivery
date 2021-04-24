@@ -19,13 +19,13 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel.currentAsset.observe(this) { JsonRes ->
-            binding.CurrencyName.text = JsonRes.data.name
+            binding.CurrencyName.text = JsonRes.asset.name
         }
         viewModel.currentAsset.observe(this) { JsonRes ->
-            binding.RecentRate.text = JsonRes.data.priceUsd
+            binding.RecentRate.text = JsonRes.asset.priceUsd
         }
         viewModel.currentAsset.observe(this) { JsonRes ->
-            currencyId = JsonRes.data.symbol.toLowerCase(Locale.ROOT)
+            currencyId = JsonRes.asset.symbol.toLowerCase(Locale.ROOT)
 
             val bitcoinUrl = "https://static.coincap.io/assets/icons/$currencyId@2x.png"
 

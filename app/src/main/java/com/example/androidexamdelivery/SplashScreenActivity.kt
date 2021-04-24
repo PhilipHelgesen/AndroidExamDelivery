@@ -1,46 +1,36 @@
 package com.example.androidexamdelivery
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
-import com.example.androidexamdelivery.databinding.CoinViewFragmentBinding
+import com.example.androidexamdelivery.databinding.ActivityMainBinding
 import java.util.*
 
 class SplashScreenActivity : AppCompatActivity() {
 
-    private lateinit var binding: CoinViewFragmentBinding
+    private lateinit var binding: ActivityMainBinding
     private var currencyId = ""
     val viewModel: ViewAssetsViewModel by viewModels()
+    private val adapter = CurrencyAdapter()
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-
-        binding = CoinViewFragmentBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.allAssets.observe(this){ListAllAssets ->
-            binding.CurrencyName.text = ListAllAssets.data.name
+        viewModel.allAssetsList.observe(this){ assetList ->
+            adapter.setCurrencyList(assetList.data)
         }
+        viewModel.fetchCurrencyData()
 
-        viewModel.allAssets.observe(this){ListAllAssets ->
-            binding.RecentRate.text = ListAllAssets.data.priceUsd
-        }
-
-        viewModel.allAssets.observe(this){ListAllAssets ->
-            currencyId = ListAllAssets.data.symbol.toLowerCase(Locale.ROOT)
-
-            val assetsURL = "https://static.coincap.io/assets/icons/$currencyId@2x.png"
-
-            Glide.with(this).load(assetsURL).into(binding.imageView)
-        }
-
+        binding.currencyRecyclerView.adapter = adapter
+        binding.currencyRecyclerView.layoutManager = LinearLayoutManager(this)
 
 
         //val button = findViewById<Button>(R.id.button1)

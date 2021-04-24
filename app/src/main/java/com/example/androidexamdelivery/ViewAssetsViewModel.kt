@@ -1,5 +1,6 @@
 package com.example.androidexamdelivery
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,12 +12,21 @@ class ViewAssetsViewModel : ViewModel() {
 
     val coincapService = API.coincapService
 
-    val allAssets = MutableLiveData<ListAllAssets>()
+    private val _allAssets = MutableLiveData<AllAssetsList>()
+    val allAssetsList: LiveData<AllAssetsList> get() = _allAssets
+
+    fun fetchCurrencyData() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val assets = coincapService.getAllCurrencyAssets()
+            _allAssets.postValue(assets)
+        }
+
+    }
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
             val assets = coincapService.getAllCurrencyAssets()
-            allAssets.postValue(assets)
+            _allAssets.postValue(assets)
         }
     }
 
