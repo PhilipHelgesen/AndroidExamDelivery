@@ -9,7 +9,7 @@ import java.util.*
 
 class CryptocurrencyMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCryptocurrencyMainBinding
-   private var currencyId = ""
+     private var currencyId = ""
     val viewModel: CryptocurrencyMainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,10 +18,11 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel.currentAsset.observe(this) { JsonRes ->
-            binding.CurrencyName.text = JsonRes.data.name
+            binding.CurrencyName.text = (JsonRes.data.name + "(" + JsonRes.data.symbol + ")")
         }
         viewModel.currentAsset.observe(this) { JsonRes ->
-            binding.RecentRate.text = JsonRes.data.priceUsd
+            binding.RecentRate.text = ("$ ".plus(JsonRes.data.priceUsd.substring(0,10)))
+
         }
         viewModel.currentAsset.observe(this) { JsonRes ->
             currencyId = JsonRes.data.symbol.toLowerCase(Locale.ROOT)
