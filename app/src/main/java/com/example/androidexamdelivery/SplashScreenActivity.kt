@@ -1,7 +1,9 @@
 package com.example.androidexamdelivery
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,11 +35,11 @@ class SplashScreenActivity : AppCompatActivity() {
         binding.currencyRecyclerView.layoutManager = LinearLayoutManager(this)
 
 
-        //val button = findViewById<Button>(R.id.button1)
-
-        //button.setOnClickListener{
-         //   val intent1 = Intent(this, CryptocurrencyMainActivity::class.java)
-           // startActivity(intent1)
-       // }
+//        val button = findViewById<Button>(R.id.button1)
+//
+//        button.setOnClickListener{
+//            val intent1 = Intent(this, CryptocurrencyMainActivity::class.java)
+//            startActivity(intent1)
+//        }
     }
 }

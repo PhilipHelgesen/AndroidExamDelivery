@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.androidexamdelivery.databinding.ItemCurrencyBinding
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_currency.view.*
 
 
@@ -32,19 +35,23 @@ class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>
             cryptoSymbol.text = currencyList[position].symbol
             cryptoRateChange.text = currencyList[position].changePercent24Hr
 
-            if (data!! >= "0.00"){
-                cryptoRateChange.setTextColor(
-                    Color.GREEN)
-            }else{
-                cryptoRateChange.setTextColor(
-                    Color.RED)
-            }
-
+            currencyId = currencyList[position].symbol.toLowerCase()
             val imageUrl = "https://static.coincap.io/assets/icons/$currencyId@2x.png"
-            Glide.with(context).load(imageUrl).into(cryptoImage)
+            Glide.with(this).load(imageUrl).into(cryptoImage)
+
+
+//            if (data!! >= "0.00"){
+//                cryptoRateChange.setTextColor(
+//                    Color.GREEN)
+//            }else{
+//                cryptoRateChange.setTextColor(
+//                    Color.RED)
+//            }
+
         }
 
     }
+
 
     override fun getItemCount(): Int {
         return currencyList.size
@@ -55,5 +62,6 @@ class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>
         currencyList.addAll(list)
         notifyDataSetChanged()
     }
+
 
 }
