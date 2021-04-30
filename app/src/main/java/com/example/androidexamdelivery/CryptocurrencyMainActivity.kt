@@ -5,7 +5,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
-import com.example.androidexamdelivery.transaction.main.CryptoCurrencyMainFragment
+import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
+import kotlinx.android.synthetic.main.activity_cryptocurrency_main.*
 import java.util.*
 
 class CryptocurrencyMainActivity : AppCompatActivity() {
@@ -19,10 +20,10 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         binding = ActivityCryptocurrencyMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_container, CryptoCurrencyMainFragment.newInstance(), "MainCurrencyFragment")
-            .commit()
+//        supportFragmentManager
+//            .beginTransaction()
+//            .add(R.id.fragment_container, CryptoCurrencyMainFragment.newInstance(), "MainCurrencyFragment")
+//            .commit()
 
         viewModel.currentAsset.observe(this) { JsonRes ->
             binding.CurrencyName.text = (JsonRes.data.name + "(" + JsonRes.data.symbol + ")")
@@ -38,6 +39,14 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
             Glide.with(this).load(bitcoinUrl).into(binding.CurrencyImage)
         }
 
+        Buy.setOnClickListener {
+            val buyCurrencyScreenFragment = BuyCurrencyScreenFragment()
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
+            transaction.replace(R.id.fragment_container, buyCurrencyScreenFragment)
+                .addToBackStack(null)
+                .commit()
+        }
 
 
     }
