@@ -39,5 +39,6 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         }
 
 
+
     }
 }
