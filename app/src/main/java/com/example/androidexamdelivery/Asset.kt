@@ -4,18 +4,18 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class AllAssetsList(
-        val data: List<Asset>,
+        val data: List<Data>,
         val timestamp: String
         )
 
 @JsonClass(generateAdapter = true)
 data class JsonRes(
-        val asset: Asset,
+        val data: Data,
         val timestamp: String
         )
 
 @JsonClass(generateAdapter = true)
-data class Asset(
+data class Data(
         val id: String,
         val rank: String,
         val symbol: String,

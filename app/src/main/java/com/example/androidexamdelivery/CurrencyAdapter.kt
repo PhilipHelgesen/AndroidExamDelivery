@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.item_currency.view.*
 
 class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>() {
 
-    private val currencyList = mutableListOf<Asset>()
+    private val currencyList = mutableListOf<Data>()
     private var currencyId = ""
 
 
@@ -52,7 +52,7 @@ class CurrencyAdapter : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>
         return currencyList.size
     }
 
-    fun setCurrencyList(list: List<Asset>){
+    fun setCurrencyList(list: List<Data>){
         currencyList.clear()
         currencyList.addAll(list)
         notifyDataSetChanged()
