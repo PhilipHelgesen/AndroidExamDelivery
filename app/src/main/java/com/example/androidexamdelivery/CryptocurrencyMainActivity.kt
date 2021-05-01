@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
 import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
+import com.example.androidexamdelivery.transaction.history.TransactionListFragment
 import kotlinx.android.synthetic.main.activity_cryptocurrency_main.*
 import java.util.*
 
@@ -47,6 +48,16 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        TransactionButton.setOnClickListener {
+            val transactionListFragment = TransactionListFragment()
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
+            transaction.replace(R.id.fragment_container, transactionListFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
 
 
     }
