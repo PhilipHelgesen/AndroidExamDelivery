@@ -6,27 +6,41 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.androidexamdelivery.R
+import com.example.androidexamdelivery.databinding.TransactionListFragmentBinding
 
-class TransactionListFragment : Fragment() {
+class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
 
     companion object {
         fun newInstance() = TransactionListFragment()
     }
+    private lateinit var adapter: WalletAdapter
+    private lateinit var binding: TransactionListFragmentBinding
+    private val viewModel: TransactionListViewModel by viewModels()
 
-    private lateinit var viewModel: TransactionListViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = TransactionListFragmentBinding.bind(view)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.transaction_list_fragment, container, false)
+        viewModel.init(requireContext())
+        configureList()
+
+        viewModel.transactionListLiveData.observe(viewLifecycleOwner){
+            adapter.setTransactionList(it)
+        }
+
+    }
+    private fun viewListeners() {
+
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TransactionListViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun observers() {
+
+    }
+
+    private fun configureList() {
+
     }
 
 }

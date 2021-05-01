@@ -10,14 +10,16 @@ import com.example.androidexamdelivery.databinding.BuyCurrencyScreenFragmentBind
 
 class BuyCurrencyScreenFragment : Fragment(R.layout.buy_currency_screen_fragment) {
 
-
+    private var walletID: Long? = null
     private lateinit var binding: BuyCurrencyScreenFragmentBinding
     private val viewModel: BuyCurrencyScreenViewModel by viewModels()
 
     companion object {
-        fun newInstance(symbol: String) = BuyCurrencyScreenFragment().apply {
-            arguments = Bundle().apply {
-                putString("symbol", symbol)
+        fun newInstance(walletID: Long?) = BuyCurrencyScreenFragment().apply {
+            if (walletID != null) {
+                arguments = Bundle().apply {
+                    putLong("walletID", walletID)
+                }
             }
         }
     }
@@ -26,9 +28,9 @@ class BuyCurrencyScreenFragment : Fragment(R.layout.buy_currency_screen_fragment
         super.onViewCreated(view, savedInstanceState)
         // Init
         binding = BuyCurrencyScreenFragmentBinding.bind(view)
-        val symbol = arguments?.getString("symbol")
+        walletID = arguments?.getLong("walletID")
         // Init view model
-        viewModel.init(requireContext(), symbol)
+        viewModel.init(requireContext(), walletID)
         // View listeners
         initViewListeners()
 
@@ -37,10 +39,10 @@ class BuyCurrencyScreenFragment : Fragment(R.layout.buy_currency_screen_fragment
     private fun initViewListeners() {
         with(binding) {
             BuyAmount.setOnClickListener {
-                if (symbol.text.toString().isEmpty()) {
+                if (walletID == null) {
                     viewModel.saveData(symbol.text.toString(), amount.text.toString())
                 } else {
-                    viewModel.updateData(symbol.text.toString(), amount.text.toString())
+                    viewModel.updateData(walletID!!, symbol.text.toString(), amount.text.toString())
                 }
             }
         }
