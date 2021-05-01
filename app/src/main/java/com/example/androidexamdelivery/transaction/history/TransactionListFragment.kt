@@ -14,9 +14,11 @@ class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
     companion object {
         fun newInstance() = TransactionListFragment()
     }
+
     private lateinit var adapter: WalletAdapter
     private lateinit var binding: TransactionListFragmentBinding
     private val viewModel: TransactionListViewModel by viewModels()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,11 +26,8 @@ class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
 
         viewModel.init(requireContext())
 
-        configureList()
-
         observe()
-
-
+        configureList()
     }
 
     private fun observe() {
@@ -41,6 +40,5 @@ class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
         binding.TransactionList.adapter = adapter
         binding.TransactionList.layoutManager = LinearLayoutManager(requireContext())
     }
-
 
 }
