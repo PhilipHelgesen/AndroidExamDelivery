@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.databinding.TransactionListFragmentBinding
+import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
 
 class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
 
@@ -15,7 +16,13 @@ class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
         fun newInstance() = TransactionListFragment()
     }
 
-    private lateinit var adapter: WalletAdapter
+    private val adapter = WalletAdapter { wallet ->
+        parentFragmentManager.beginTransaction().replace(
+            R.id.fragment_container,
+            BuyCurrencyScreenFragment.newInstance(walletID = wallet.id))
+            .addToBackStack("BuyScreenFragment")
+            .commit()
+    }
     private lateinit var binding: TransactionListFragmentBinding
     private val viewModel: TransactionListViewModel by viewModels()
 
@@ -37,8 +44,9 @@ class TransactionListFragment : Fragment(R.layout.transaction_list_fragment) {
     }
 
     private fun configureList() {
-        binding.TransactionList.adapter = adapter
         binding.TransactionList.layoutManager = LinearLayoutManager(requireContext())
+        binding.TransactionList.adapter = adapter
+
     }
 
 }
