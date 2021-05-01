@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="147dp"
-        android:layout_marginBottom="444dp"
+        android:layout_marginBottom="504dp"
         android:gravity="center"
         android:padding="30sp"
         android:text="@string/trans_instruct_text"
@@ -37,12 +37,12 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="252dp"
-        android:layout_height="71dp"
+        android:layout_width="222dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="357dp"
+        android:gravity="center"
         android:text="@string/portfolio"
         android:textAlignment="center"
-        android:gravity="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button"
@@ -50,6 +50,17 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/portfolioview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="265dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
