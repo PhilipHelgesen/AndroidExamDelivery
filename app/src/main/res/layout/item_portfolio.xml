@@ -9,7 +9,7 @@
     >
 
     <ImageView
-        android:id="@+id/portfolio_symbol"
+        android:id="@+id/portfolio_img"
         android:layout_width="47dp"
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
