@@ -22,11 +22,18 @@
         </activity>
 
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".CryptoListMainActivity"
             android:label="Home" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PortfolioActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PORTFOLIO" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
