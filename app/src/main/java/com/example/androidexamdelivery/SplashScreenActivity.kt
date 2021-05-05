@@ -36,12 +36,5 @@ class SplashScreenActivity : AppCompatActivity() {
         binding.currencyRecyclerView.adapter = adapter
         binding.currencyRecyclerView.layoutManager = LinearLayoutManager(this)
 
-
-//        val button = findViewById<Button>(R.id.button1)
-//
-//        button.setOnClickListener{
-//            val intent1 = Intent(this, CryptocurrencyMainActivity::class.java)
-//            startActivity(intent1)
-//        }
     }
 }

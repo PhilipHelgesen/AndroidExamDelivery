@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidexamdelivery.databinding.WalletItemBinding
 import com.example.androidexamdelivery.entities.Wallet
-import kotlinx.android.synthetic.main.transaction_list_fragment.view.*
 import kotlinx.android.synthetic.main.wallet_item.view.*
 
 
@@ -14,8 +13,7 @@ class WalletAdapter(val lambdaFunction: (Wallet) -> Unit) :
 
     private val transactionList = mutableListOf<Wallet>()
 
-    class ViewHolder(val binding: WalletItemBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(val binding: WalletItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(wallet: Wallet) {
             binding.CurrencySymbol.text = wallet.amount
             binding.CurrencyAmount.text = wallet.symbol

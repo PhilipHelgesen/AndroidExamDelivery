@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.androidexamdelivery.db.DataBase
 import com.example.androidexamdelivery.db.WalletDAO
 import com.example.androidexamdelivery.entities.Wallet
+import kotlinx.coroutines.Dispatchers
 
 import kotlinx.coroutines.launch
 
@@ -24,9 +25,9 @@ class TransactionListViewModel : ViewModel() {
     }
 
     fun fetchData(){
-        viewModelScope.launch{
+        viewModelScope.launch(Dispatchers.IO){
             val list = walletDAO.fetchAll()
-            _transactionListLiveData.value = list
+            _transactionListLiveData.postValue(list)
         }
     }
 }
