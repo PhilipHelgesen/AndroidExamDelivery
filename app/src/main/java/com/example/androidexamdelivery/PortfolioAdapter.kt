@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_portfolio.view.*
 
 class PortfolioAdapter : RecyclerView.Adapter<PortfolioAdapter.PortfolioViewHolder>() {
 
-    private val portfolioList = mutableListOf<Asset>()
+    private val portfolioList = mutableListOf<Data>()
     var currencyId = ""
     inner class PortfolioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -32,7 +32,7 @@ class PortfolioAdapter : RecyclerView.Adapter<PortfolioAdapter.PortfolioViewHold
         return portfolioList.size
     }
 
-    fun setPortfolioList(list: List<Asset>){
+    fun setPortfolioList(list: List<Data>){
         portfolioList.clear()
         portfolioList.addAll(list)
         notifyDataSetChanged()

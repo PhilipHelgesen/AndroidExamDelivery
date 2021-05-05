@@ -23,7 +23,14 @@
 
         <activity
             android:name=".CryptoListMainActivity"
-            android:label="Home" />
+            android:label="Home">
+        <intent-filter>
+            <action android:name="android.intent.action.LIST" />
+        </intent-filter>
+        </activity>
+
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

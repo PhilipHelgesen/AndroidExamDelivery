@@ -13,7 +13,7 @@ class PortfolioActivity : AppCompatActivity(){
     private var currencyId = ""
     val viewModel: ViewAssetsViewModel by viewModels()
     private val adapter = PortfolioAdapter()
-    private val currencyList = mutableListOf<Asset>()
+    private val currencyList = mutableListOf<Data>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

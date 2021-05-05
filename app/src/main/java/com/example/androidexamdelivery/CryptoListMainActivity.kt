@@ -20,7 +20,7 @@ class CryptoListMainActivity : AppCompatActivity() {
     private var currencyId = ""
     val viewModel: ViewAssetsViewModel by viewModels()
     private val adapter = CurrencyAdapter()
-    private val currencyList = mutableListOf<Asset>()
+    private val currencyList = mutableListOf<Data>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
