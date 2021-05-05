@@ -10,6 +10,15 @@
     >
 
 
+    <TextView
+        android:id="@+id/crypto_item_click_element"
+        android:layout_width="412dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/cryptoImage"
         android:layout_width="34dp"
@@ -31,6 +40,8 @@
         app:layout_constraintStart_toEndOf="@+id/cryptoImage"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
         android:id="@+id/cryptoSymbol"
         android:layout_width="wrap_content"
@@ -43,36 +54,30 @@
         app:layout_constraintTop_toBottomOf="@+id/cryptoName"
         app:layout_constraintVertical_bias="0.6" />
 
+
     <TextView
         android:id="@+id/cryptoRate"
-        android:layout_width="67dp"
-        android:layout_height="15dp"
+        android:layout_width="69dp"
+        android:layout_height="18dp"
         android:fontFamily="sans-serif-black"
         android:text="Rate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toEndOf="@+id/cryptoImage"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/cryptoCurrencySymbol"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="sans-serif-black"
-        android:text="$"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cryptoRate"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538" />
 
     <TextView
         android:id="@+id/cryptoRateChange"
-        android:layout_width="67dp"
-        android:layout_height="15dp"
+        android:layout_width="68dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:text="RateChange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

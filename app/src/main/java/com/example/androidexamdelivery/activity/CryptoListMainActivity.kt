@@ -3,9 +3,10 @@ package com.example.androidexamdelivery.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidexamdelivery.Data
 import com.example.androidexamdelivery.R
@@ -13,12 +14,11 @@ import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
 import com.example.androidexamdelivery.adapter.CurrencyAdapter
 import com.example.androidexamdelivery.databinding.ActivityMainBinding
 
-class CryptoListMainActivity : AppCompatActivity() {
+class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickListener {
 
     private lateinit var binding: ActivityMainBinding
-    private var currencyId = ""
     val viewModel: ViewAssetsViewModel by viewModels()
-    private val adapter = CurrencyAdapter()
+    private val adapter = CurrencyAdapter(this)
     private val currencyList = mutableListOf<Data>()
 
 
@@ -40,10 +40,15 @@ class CryptoListMainActivity : AppCompatActivity() {
         headerElement.setOnClickListener {
             val intent = Intent(this, PortfolioActivity::class.java)
             startActivity(intent)
-
         }
+
 
     }
 
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, CryptocurrencyMainActivity::class.java)
+        startActivity(intent)
+    }
 }
 
