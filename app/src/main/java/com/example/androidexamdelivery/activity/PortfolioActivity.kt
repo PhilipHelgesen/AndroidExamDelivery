@@ -1,10 +1,12 @@
-package com.example.androidexamdelivery
+package com.example.androidexamdelivery.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.androidexamdelivery.databinding.ActivityMainBinding
+import com.example.androidexamdelivery.Data
+import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
+import com.example.androidexamdelivery.adapter.PortfolioAdapter
 import com.example.androidexamdelivery.databinding.ActivityPortfolioBinding
 
 class PortfolioActivity : AppCompatActivity(){

@@ -1,9 +1,11 @@
-package com.example.androidexamdelivery
+package com.example.androidexamdelivery.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
+import com.example.androidexamdelivery.viewmodel.CryptocurrencyMainViewModel
+import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
 import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
 import com.example.androidexamdelivery.transaction.history.TransactionListFragment

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidExamDelivery">
         <activity
-            android:name=".CryptocurrencyMainActivity">
+            android:name=".activity.CryptocurrencyMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".CryptoListMainActivity"
+            android:name=".activity.CryptoListMainActivity"
             android:label="Home">
         <intent-filter>
             <action android:name="android.intent.action.LIST" />
@@ -31,14 +31,14 @@
 
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PortfolioActivity">
+        <activity android:name=".activity.PortfolioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.PORTFOLIO" />
 

@@ -1,18 +1,13 @@
-package com.example.androidexamdelivery
+package com.example.androidexamdelivery.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.example.androidexamdelivery.Data
+import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
+import com.example.androidexamdelivery.adapter.CurrencyAdapter
 import com.example.androidexamdelivery.databinding.ActivityMainBinding
-import java.text.FieldPosition
-import java.util.*
 
 class CryptoListMainActivity : AppCompatActivity() {
 

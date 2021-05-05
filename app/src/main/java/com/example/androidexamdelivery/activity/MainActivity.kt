@@ -1,9 +1,10 @@
-package com.example.androidexamdelivery
+package com.example.androidexamdelivery.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.androidexamdelivery.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

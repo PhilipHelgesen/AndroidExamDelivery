@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    tools:context=".CryptocurrencyMainActivity"
+    tools:context=".activity.CryptocurrencyMainActivity"
     android:padding="12dp"
     >
 
