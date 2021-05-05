@@ -6,6 +6,7 @@
     tools:context=".transaction.history.TransactionListFragment"
     >
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/TransactionList"
         android:layout_width="match_parent"
