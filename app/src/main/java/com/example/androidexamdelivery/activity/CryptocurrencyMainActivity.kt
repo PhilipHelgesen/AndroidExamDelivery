@@ -3,7 +3,10 @@ package com.example.androidexamdelivery.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
+import com.example.androidexamdelivery.API
+import com.example.androidexamdelivery.JsonRes
 import com.example.androidexamdelivery.viewmodel.CryptocurrencyMainViewModel
 import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
@@ -19,10 +22,19 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
     private var currencyId = ""
     val viewModel: CryptocurrencyMainViewModel by viewModels()
 
+    companion object{
+        const val ID = "id"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCryptocurrencyMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val id = intent.getStringExtra("id")
+        if (id != null) {
+            viewModel.id = id
+        }
+
 
 //        supportFragmentManager
 //            .beginTransaction()

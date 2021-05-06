@@ -6,7 +6,7 @@ import retrofit2.http.Path
 interface CoincapService {
 
     @GET("assets/{id}")
-    suspend fun getCurrencyAssets(@Path("id") id: String) : JsonRes
+   suspend fun getCurrencyAssets(@Path("id") id: String?) : JsonRes
 
     @GET("assets")
     suspend fun getAllCurrencyAssets() : AllAssetsList

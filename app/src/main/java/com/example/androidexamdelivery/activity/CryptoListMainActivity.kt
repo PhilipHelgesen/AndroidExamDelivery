@@ -7,8 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.androidexamdelivery.API
 import com.example.androidexamdelivery.Data
+import com.example.androidexamdelivery.JsonRes
 import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
 import com.example.androidexamdelivery.adapter.CurrencyAdapter
@@ -20,7 +23,7 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
     val viewModel: ViewAssetsViewModel by viewModels()
     private val adapter = CurrencyAdapter(this)
     private val currencyList = mutableListOf<Data>()
-
+    private val newList = currencyList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
@@ -42,12 +45,14 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
             startActivity(intent)
         }
 
-
     }
 
     override fun onItemClick(position: Int) {
         Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, CryptocurrencyMainActivity::class.java)
+        println(" the list is : ${currencyList}")
+        val id = newList[position].id
+        intent.putExtra("id", id)
         startActivity(intent)
     }
 }

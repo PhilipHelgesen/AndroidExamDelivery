@@ -11,13 +11,13 @@ import kotlinx.coroutines.launch
 
 class CryptocurrencyMainViewModel : ViewModel() {
 
+    var id = ""
     val coincapService = API.coincapService
-
     val currentAsset = MutableLiveData<JsonRes>()
 
-    init {
+        init {
         viewModelScope.launch(Dispatchers.IO) {
-            val data = coincapService.getCurrencyAssets("ethereum")
+            val data = coincapService.getCurrencyAssets(id)
             currentAsset.postValue(data)
         }
     }
