@@ -3,21 +3,16 @@ package com.example.androidexamdelivery.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.androidexamdelivery.API
 import com.example.androidexamdelivery.Data
-import com.example.androidexamdelivery.JsonRes
 import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
 import com.example.androidexamdelivery.adapter.CurrencyAdapter
 import com.example.androidexamdelivery.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.item_currency.*
-import kotlinx.android.synthetic.main.item_currency.view.*
+
 
 class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickListener {
 

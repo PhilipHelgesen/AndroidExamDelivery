@@ -2,7 +2,6 @@ package com.example.androidexamdelivery.db
 
 import androidx.room.*
 import com.example.androidexamdelivery.entities.Wallet
-import kotlinx.coroutines.selects.select
 
 @Dao
 interface WalletDAO {

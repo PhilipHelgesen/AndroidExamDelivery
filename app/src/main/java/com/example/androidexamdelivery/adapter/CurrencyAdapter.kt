@@ -1,16 +1,13 @@
 package com.example.androidexamdelivery.adapter
 
-import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.androidexamdelivery.Data
 import com.example.androidexamdelivery.R
-import com.example.androidexamdelivery.activity.PortfolioActivity
 import kotlinx.android.synthetic.main.item_currency.view.*
 
 

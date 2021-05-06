@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="119dp"
         android:background="@color/teal_200"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -70,11 +70,10 @@
 
     <FrameLayout
         android:id="@+id/fragment_container"
-        android:layout_width="414dp"
-        android:layout_height="425dp"
-        android:layout_marginTop="48dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="165dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
@@ -82,7 +81,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="404dp"
+        android:layout_width="match_parent"
         android:layout_height="47dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/fragment_container"
@@ -107,32 +106,6 @@
             android:paddingStart="2dp"
             android:text="Sell" />
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_container">
-
-        <Button
-            android:id="@+id/TransactionButton"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:text="Transactions"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

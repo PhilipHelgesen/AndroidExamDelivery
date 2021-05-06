@@ -2,17 +2,12 @@ package com.example.androidexamdelivery.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.activity.viewModels
-import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
-import com.example.androidexamdelivery.API
-import com.example.androidexamdelivery.JsonRes
 import com.example.androidexamdelivery.viewmodel.CryptocurrencyMainViewModel
 import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
 import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
-import com.example.androidexamdelivery.transaction.history.TransactionListFragment
 import com.example.androidexamdelivery.transaction.sell.SellCurrencyScreenFragment
 import kotlinx.android.synthetic.main.activity_cryptocurrency_main.*
 import java.util.*
@@ -37,11 +32,6 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         }
 
 
-//        supportFragmentManager
-//            .beginTransaction()
-//            .add(R.id.fragment_container, CryptoCurrencyMainFragment.newInstance(), "MainCurrencyFragment")
-//            .commit()
-
         viewModel.currentAsset.observe(this) { JsonRes ->
             binding.CurrencyName.text = (JsonRes.data.name + "(" + JsonRes.data.symbol + ")")
         }
@@ -65,16 +55,6 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .commit()
         }
 
-        TransactionButton.setOnClickListener {
-            val transactionListFragment = TransactionListFragment()
-            val manager = supportFragmentManager
-            val transaction = manager.beginTransaction()
-            transaction.replace(R.id.fragment_container, transactionListFragment)
-                .addToBackStack(null)
-                .commit()
-        }
-
-
         Sell.setOnClickListener {
             val sellCurrencyScreenFragment = SellCurrencyScreenFragment()
             val manager = supportFragmentManager
@@ -83,7 +63,5 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
-
-
     }
 }
