@@ -10,6 +10,7 @@ import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
 import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
 import com.example.androidexamdelivery.transaction.history.TransactionListFragment
+import com.example.androidexamdelivery.transaction.sell.SellCurrencyScreenFragment
 import kotlinx.android.synthetic.main.activity_cryptocurrency_main.*
 import java.util.*
 
@@ -61,6 +62,7 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .commit()
         }
 
+
 //        val navBarTitle = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_NAME_KEY)
 //        val buySellName = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_NAME_KEY)
 //        val buySellSymbol = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_SYMBOL_KEY)
@@ -70,6 +72,17 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
 //        findViewById<TextView>(R.id.CurrencyName).text = "$buySellName ($buySellSymbol)"
 //        findViewById<TextView>(R.id.RecentRate).text = "$$buySellPrice"
 //        findViewById<TextView>(R.id.CurrencySymbol).text = "$$buySellSymbol"
+
+        Sell.setOnClickListener {
+            val sellCurrencyScreenFragment = SellCurrencyScreenFragment()
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
+            transaction.replace(R.id.fragment_container, sellCurrencyScreenFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+
 
 
 
