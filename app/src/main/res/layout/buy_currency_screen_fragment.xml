@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,25 +34,25 @@
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/amount"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.168" />
+            app:layout_constraintVertical_bias="0.105" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="19dp"
             android:layout_marginEnd="47dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="193dp"
             android:text="Amount"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/cryptoSymbol"
-            app:layout_constraintEnd_toStartOf="@+id/symbol"
-            app:layout_constraintHorizontal_bias="0.714"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/amount"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
             android:id="@+id/symbol"
