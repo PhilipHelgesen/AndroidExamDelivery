@@ -9,6 +9,7 @@ import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.databinding.ActivityCryptocurrencyMainBinding
 import com.example.androidexamdelivery.transaction.buy.BuyCurrencyScreenFragment
 import com.example.androidexamdelivery.transaction.history.TransactionListFragment
+import com.example.androidexamdelivery.transaction.sell.SellCurrencyScreenFragment
 import kotlinx.android.synthetic.main.activity_cryptocurrency_main.*
 import java.util.*
 
@@ -59,6 +60,16 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        Sell.setOnClickListener {
+            val sellCurrencyScreenFragment = SellCurrencyScreenFragment()
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
+            transaction.replace(R.id.fragment_container, sellCurrencyScreenFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
 
 
 
