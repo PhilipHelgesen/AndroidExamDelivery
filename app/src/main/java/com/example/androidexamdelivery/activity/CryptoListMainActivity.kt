@@ -16,6 +16,8 @@ import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
 import com.example.androidexamdelivery.adapter.CurrencyAdapter
 import com.example.androidexamdelivery.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.item_currency.*
+import kotlinx.android.synthetic.main.item_currency.view.*
 
 class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickListener {
 
@@ -23,7 +25,6 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
     val viewModel: ViewAssetsViewModel by viewModels()
     private val adapter = CurrencyAdapter(this)
     private val currencyList = mutableListOf<Data>()
-    private val newList = currencyList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
@@ -50,8 +51,8 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
     override fun onItemClick(position: Int) {
         Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, CryptocurrencyMainActivity::class.java)
-        println(" the list is : ${currencyList}")
-        val id = newList[position].id
+        val id = adapter.currencyName
+        println(" value $id")
         intent.putExtra("id", id)
         startActivity(intent)
     }
