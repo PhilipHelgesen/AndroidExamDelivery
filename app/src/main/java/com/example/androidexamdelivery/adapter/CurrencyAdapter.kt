@@ -18,6 +18,7 @@ class CurrencyAdapter(private val listener: OnItemClickListener) : RecyclerView.
 
     private val currencyList = mutableListOf<Data>()
     private var currencyId = ""
+    var currencyName = ""
 
 
     inner class CurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
@@ -52,7 +53,7 @@ class CurrencyAdapter(private val listener: OnItemClickListener) : RecyclerView.
             cryptoRate.text = ("$${currencyList[position].priceUsd.substring(0,10)}")
             cryptoSymbol.text = currencyList[position].symbol
 
-
+            currencyName = currencyList[position].id
             currencyId = currencyList[position].symbol.toLowerCase()
             val imageUrl = "https://static.coincap.io/assets/icons/$currencyId@2x.png"
             Glide.with(this).load(imageUrl).into(cryptoImage)
@@ -72,6 +73,7 @@ class CurrencyAdapter(private val listener: OnItemClickListener) : RecyclerView.
             }
         }
     }
+
 
     override fun getItemCount(): Int {
         return currencyList.size

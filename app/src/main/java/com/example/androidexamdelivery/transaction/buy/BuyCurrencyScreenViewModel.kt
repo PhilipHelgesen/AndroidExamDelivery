@@ -34,7 +34,7 @@ class BuyCurrencyScreenViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             if (!symbol.isNullOrEmpty() && !amount.isNullOrEmpty()) {
                try {
-                   walletDAO.insert(Wallet(symbol = symbol, amount = amount))
+                   walletDAO.insert(Wallet( symbol = symbol, amount = amount))
                    Log.d("Save", "insert happened with symbol: $symbol and amount: $amount ")
                    walletDAO.fetchAll()
                }catch (e: Exception) {
