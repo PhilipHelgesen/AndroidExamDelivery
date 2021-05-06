@@ -8,14 +8,24 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
+
+import com.example.androidexamdelivery.API
+
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.androidexamdelivery.Data
+import com.example.androidexamdelivery.JsonRes
 import com.example.androidexamdelivery.R
 import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
 import com.example.androidexamdelivery.adapter.CurrencyAdapter
 import com.example.androidexamdelivery.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.item_currency.*
+
+import kotlinx.android.synthetic.main.item_currency.view.*
+
+
 
 class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickListener {
 
@@ -23,7 +33,6 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
     val viewModel: ViewAssetsViewModel by viewModels()
     private val adapter = CurrencyAdapter(this)
     private val currencyList = mutableListOf<Data>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
@@ -45,7 +54,6 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
             startActivity(intent)
         }
 
-
     }
 
 
@@ -53,6 +61,11 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
    override fun onItemClick(position: Int) {
         val intent = Intent(this, CryptocurrencyMainActivity::class.java)
 
+        val id = adapter.currencyName
+        println(" value $id")
+        intent.putExtra("id", id)
+
+ master
         startActivity(intent)
     }
 
