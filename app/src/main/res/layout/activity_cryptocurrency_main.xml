@@ -26,7 +26,7 @@
             android:layout_marginStart="48dp"
             android:layout_marginTop="30dp"
             android:fontFamily="sans-serif-black"
-            android:text="TextView"
+            android:text="@string/currencyname"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
             android:layout_marginEnd="168dp"
             android:layout_marginBottom="30dp"
             android:fontFamily="sans-serif-black"
-            android:text="TextView"
+            android:text="@string/recentrate"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +96,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingEnd="2dp"
-            android:text="Buy" />
+            android:text="@string/buy"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/Sell"
@@ -104,7 +105,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingStart="2dp"
-            android:text="Sell" />
+            android:text="@string/sell"
+            style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

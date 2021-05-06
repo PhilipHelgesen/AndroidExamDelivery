@@ -11,7 +11,7 @@
         android:id="@+id/CurrencySymbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Symbol"
+        android:text="@string/symbol"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="26dp" />
 
@@ -19,7 +19,7 @@
         android:id="@+id/CurrencyAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Amount"
+        android:text="@string/amount"
         tools:layout_editor_absoluteX="229dp"
         tools:layout_editor_absoluteY="23dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
