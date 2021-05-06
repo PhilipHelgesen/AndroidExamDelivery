@@ -2,6 +2,7 @@ package com.example.androidexamdelivery.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.example.androidexamdelivery.viewmodel.CryptocurrencyMainViewModel
@@ -32,7 +33,7 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
             binding.CurrencyName.text = (JsonRes.data.name + "(" + JsonRes.data.symbol + ")")
         }
         viewModel.currentAsset.observe(this) { JsonRes ->
-            binding.RecentRate.text = ("$ " + JsonRes.data.priceUsd.substring(0, 7))
+         binding.RecentRate.text = ("$ " + JsonRes.data.priceUsd.substring(0, 7))
         }
         viewModel.currentAsset.observe(this) { JsonRes ->
             currencyId = JsonRes.data.symbol.toLowerCase(Locale.ROOT)
@@ -59,6 +60,16 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+
+//        val navBarTitle = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_NAME_KEY)
+//        val buySellName = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_NAME_KEY)
+//        val buySellSymbol = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_SYMBOL_KEY)
+//        val buySellPrice = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_PRICE_KEY)
+//
+//        supportActionBar?.title = navBarTitle
+//        findViewById<TextView>(R.id.CurrencyName).text = "$buySellName ($buySellSymbol)"
+//        findViewById<TextView>(R.id.RecentRate).text = "$$buySellPrice"
+//        findViewById<TextView>(R.id.CurrencySymbol).text = "$$buySellSymbol"
 
 
 
