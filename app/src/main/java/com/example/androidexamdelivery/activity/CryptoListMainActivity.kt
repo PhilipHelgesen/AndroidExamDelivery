@@ -48,22 +48,11 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
 
     }
 
-    class CustomViewHolder(val view: View, var crypto: Data? = null) : RecyclerView.ViewHolder(view) {
 
-        companion object {
-            const val CRYPTO_NAME_KEY = "CRYPTO_NAME"
-            const val CRYPTO_ID_KEY = "CRYPTO_ID"
-            const val CRYPTO_SYMBOL_KEY = "CRYPTO_SYMBOL"
-            const val CRYPTO_PRICE_KEY = "CRYPTO_PRICE"
-        }
-
-
-    }
 
    override fun onItemClick(position: Int) {
         val intent = Intent(this, CryptocurrencyMainActivity::class.java)
 
-        intent.putExtra(CustomViewHolder.CRYPTO_ID_KEY, currencyList[position].id)
         startActivity(intent)
     }
 

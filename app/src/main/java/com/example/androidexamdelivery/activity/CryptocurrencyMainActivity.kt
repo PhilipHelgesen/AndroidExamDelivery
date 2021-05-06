@@ -63,16 +63,6 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
         }
 
 
-//        val navBarTitle = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_NAME_KEY)
-//        val buySellName = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_NAME_KEY)
-//        val buySellSymbol = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_SYMBOL_KEY)
-//        val buySellPrice = intent.getStringExtra(CryptoListMainActivity.CustomViewHolder.CRYPTO_PRICE_KEY)
-//
-//        supportActionBar?.title = navBarTitle
-//        findViewById<TextView>(R.id.CurrencyName).text = "$buySellName ($buySellSymbol)"
-//        findViewById<TextView>(R.id.RecentRate).text = "$$buySellPrice"
-//        findViewById<TextView>(R.id.CurrencySymbol).text = "$$buySellSymbol"
-
         Sell.setOnClickListener {
             val sellCurrencyScreenFragment = SellCurrencyScreenFragment()
             val manager = supportFragmentManager
@@ -81,9 +71,6 @@ class CryptocurrencyMainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
-
-
-
 
 
     }
