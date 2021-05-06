@@ -31,7 +31,6 @@ class SellCurrencyScreenViewModel : ViewModel() {
 
     }
 
-
     fun sellData(symbol: String?, amount: String?){
         viewModelScope.launch(Dispatchers.IO) {
             if (!symbol.isNullOrEmpty() && !amount.isNullOrEmpty()) {
