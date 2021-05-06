@@ -49,7 +49,7 @@ class CurrencyAdapter(private val listener: OnItemClickListener) : RecyclerView.
         holder.itemView.apply{
 
             cryptoName.text = currencyList[position].name
-            cryptoRate.text = "$${currencyList[position].priceUsd.substring(0,10)}"
+            cryptoRate.text = ("$${currencyList[position].priceUsd.substring(0,10)}")
             cryptoSymbol.text = currencyList[position].symbol
 
 
@@ -61,7 +61,7 @@ class CurrencyAdapter(private val listener: OnItemClickListener) : RecyclerView.
             val ratechange = "${currencyList[position].changePercent24Hr.substring(0,6)}%"
 
             if (currencyList[position].changePercent24Hr!! >= "0.00"){
-                cryptoRateChange.text = "+$ratechange"
+                cryptoRateChange.text = ("+$ratechange")
                 cryptoRateChange.setTextColor(
                     Color.GREEN)
             }
