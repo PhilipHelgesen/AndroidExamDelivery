@@ -3,13 +3,18 @@ package com.example.androidexamdelivery.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import com.example.androidexamdelivery.API
+
+import androidx.recyclerview.widget.RecyclerView
+
 import com.example.androidexamdelivery.Data
 import com.example.androidexamdelivery.JsonRes
 import com.example.androidexamdelivery.R
@@ -17,7 +22,10 @@ import com.example.androidexamdelivery.viewmodel.ViewAssetsViewModel
 import com.example.androidexamdelivery.adapter.CurrencyAdapter
 import com.example.androidexamdelivery.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.item_currency.*
+
 import kotlinx.android.synthetic.main.item_currency.view.*
+
+
 
 class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickListener {
 
@@ -48,13 +56,19 @@ class CryptoListMainActivity : AppCompatActivity(), CurrencyAdapter.OnItemClickL
 
     }
 
-    override fun onItemClick(position: Int) {
-        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
+
+
+   override fun onItemClick(position: Int) {
         val intent = Intent(this, CryptocurrencyMainActivity::class.java)
+
         val id = adapter.currencyName
         println(" value $id")
         intent.putExtra("id", id)
+
+ master
         startActivity(intent)
     }
+
+
 }
 
